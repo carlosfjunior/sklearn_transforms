@@ -28,7 +28,7 @@ class NotasFeatureTransformer(BaseEstimator, TransformerMixin):
         # Removendo outliers
         data["NOTA_MF"] = numpy.where(data["NOTA_MF"] > 10, 10, data["NOTA_MF"])
 
-        data["TAN_SQRT_NOTA_MF"] = numpy.tan(sqrt(data['NOTA_MF']))
+        data["TAN_SQRT_NOTA_MF"] = numpy.tan(numpy.sqrt(data['NOTA_MF']))
         data["SQRT_NOTA_MF"] = numpy.sqrt(data['NOTA_MF'])
         data["SQRT_NOTA_DE"] = numpy.sqrt(data['NOTA_DE'])
         data["SQRT_NOTA_EM"] = numpy.sqrt(data['NOTA_MF'])
