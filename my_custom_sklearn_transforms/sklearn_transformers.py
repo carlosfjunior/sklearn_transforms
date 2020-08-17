@@ -1,6 +1,5 @@
-from sklearn.base import BaseEstimator, TransformerMixin
-
 import numpy as np
+from sklearn.base import BaseEstimator, TransformerMixin
 from numpy import tan, sqrt
 
 # All sklearn Transforms must have the `transform` and `fit` methods
