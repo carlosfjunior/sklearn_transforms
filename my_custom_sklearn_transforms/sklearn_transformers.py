@@ -17,6 +17,7 @@ class DropColumns(BaseEstimator, TransformerMixin):
 
 class NotasFeatureTransformer(BaseEstimator, TransformerMixin):
     def __init__(self):
+        print('Execution NotasFeatureTransformer')
 
     def fit(self, X, y=None):
         return self
