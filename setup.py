@@ -15,6 +15,7 @@ setup(
       packages=[
             'my_custom_sklearn_transforms'
       ],
+      setup_requires=["numpy"],
       install_requires=['numpy'],
       zip_safe=False
 )
