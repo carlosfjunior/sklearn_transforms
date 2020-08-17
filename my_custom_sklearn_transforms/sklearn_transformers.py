@@ -1,4 +1,3 @@
-import numpy as np
 from sklearn.base import BaseEstimator, TransformerMixin
 from numpy import tan, sqrt
 
