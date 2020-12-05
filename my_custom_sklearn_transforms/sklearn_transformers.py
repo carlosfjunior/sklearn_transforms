@@ -32,29 +32,10 @@ class CustomTransformer(BaseEstimator, TransformerMixin):
         
         return data
  
-class ItemSelector():
-    def __init__(self, key):
-        self.key = key
+class ModifiedLabelEncoder(LabelEncoder):
 
-    def fit(self, x, y=None):
-        return self
+    def fit_transform(self, y, *args, **kwargs):
+        return super().fit_transform(y).reshape(-1, 1)
 
-    def transform(self, data_dict):
-        return data_dict[self.key]
-    
-class MyLEncoder():
-
-    def transform(self, X, y=None, **fit_params):
-        enc = preprocessing.LabelEncoder()
-        encc = enc.fit(X)
-        enc_data = enc.transform(X)
-
-        return enc_data
-
-    def fit_transform(self, X, y=None, **fit_params):
-        self.fit(X, y, **fit_params)
-        return self.transform(X)
-
-    def fit(self, X, y=None, **fit_params):
-        return self
-        
+    def transform(self, y, *args, **kwargs):
+        return super().transform(y).reshape(-1, 1)
