@@ -28,6 +28,4 @@ class CustomTransformer(BaseEstimator, TransformerMixin):
         data = data[data['koi_pdisposition'].notna()]
         data = data[data['koi_score'].values < 1.1]
         
-        koi_pdisposition
-        
         return data
