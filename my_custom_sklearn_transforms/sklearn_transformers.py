@@ -27,5 +27,6 @@ class CustomTransformer(BaseEstimator, TransformerMixin):
         
         data = data[data['koi_pdisposition'].notna()]
         data = data[data['koi_score'].values < 1.1]
+        data['koi_pdisposition'] = data['koi_pdisposition'].astype('category').cat.codes
         
         return data
